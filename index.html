@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirate Abou Machano's Personal Page</title>
+    <style>
+        @keyframes rgbGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes rgbBorderGradient {
+            0% {
+                border-image-source: linear-gradient(45deg, red, yellow);
+            }
+            33% {
+                border-image-source: linear-gradient(45deg, yellow, green);
+            }
+            66% {
+                border-image-source: linear-gradient(45deg, green, blue);
+            }
+            100% {
+                border-image-source: linear-gradient(45deg, blue, red);
+            }
+        }
+        @keyframes planeTakeoffLanding {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+            25% {
+                transform: translateX(200px) translateY(-50px);
+            }
+            50% {
+                transform: translateX(400px) translateY(-100px);
+            }
+            75% {
+                transform: translateX(600px) translateY(-50px);
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            color: white;
+            padding: 20px;
+            background: linear-gradient(45deg, red, yellow, green, blue);
+            animation: rgbGradient 10s infinite;
+            background-size: 200% 200%;
+        }
+        nav {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background: linear-gradient(45deg, red, yellow, green, blue);
+            animation: rgbGradient 10s infinite;
+            background-size: 200% 200%;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            padding: 20px 30px;
+            text-decoration: none;
+            background-color: #b71c1c;
+            margin: 10px;
+            border-radius: 5px;
+            border: 4px solid transparent;
+            border-image-slice: 1;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        nav a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            border-image-source: linear-gradient(45deg, red, yellow, green, blue);
+            animation: rgbBorderGradient 3s infinite;
+        }
+        .plane-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        .plane {
+            position: absolute;
+            width: 100px;
+            animation: planeTakeoffLanding 5s infinite;
+        }
+        section {
+            display: none;
+            padding: 20px;
+            margin: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s forwards;
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .visible {
+            display: block;
+        }
+        footer {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background: linear-gradient(45deg, red, yellow, green, blue);
+            animation: rgbGradient 10s infinite;
+            background-size: 200% 200%;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('visible'));
+            document.getElementById(sectionId).classList.add('visible');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Emirate Abou Machano's Page</h1>
+    </header>
+    <nav>
+        <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showSection('about')">About Me</a>
+        <a href="javascript:void(0)" onclick="showSection('interests')">Interests</a>
+        <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+    </nav>
+    <div class="plane-container">
+        <img src="plane.png" alt="Plane" class="plane">
+    </div>
+    <section id="home">
+        <h2>Home</h2>
+        <p>Hi, I'm Emirate Abou Machano! Welcome to my personal page where I share my love for aviation, gaming, and hanging out with friends.</p>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Emirate Abou Machano. I have a deep passion for aviation and aspire to be a pilot one day. When I'm not dreaming about flying, I enjoy playing games with my friends and spending quality time with them.</p>
+    </section>
+    <section id="interests">
+        <h2>Interests</h2>
+        <h3>Aviation</h3>
+        <p>I love everything about aviation. From the mechanics of how planes work to the thrill of flying, it captivates me completely. I spend a lot of time reading about different types of aircraft, their engineering, and advancements in aviation technology. The idea of piloting a plane and exploring the skies is a dream I am determined to make a reality one day.</p>
+        <h3>Gaming</h3>
+        <p>Gaming is another passion of mine. I often play games with my friends, and it’s not just about the competition but also about the camaraderie and fun we have together. Gaming allows me to immerse myself in different worlds, solve challenges, and connect with people who share the same interests. Whether it’s a fast-paced action game or a strategic puzzle, I love the excitement and mental engagement that gaming provides.</p>
+        <h3>Hanging Out with Friends</h3>
+        <p>Spending time with my friends is very important to me. Whether we're playing games or just hanging out, I always cherish these moments. Our hangouts are filled with laughter, discussions, and creating memories that I value deeply. These interactions help me unwind and strengthen the bonds I have with my friends.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me! You can email me at <a href="mailto:aviationyt51@gmail.com">aviationyt51@gmail.com</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Emirate Abou Machano. All rights reserved.</p>
+    </footer>
+</body>
+</html>
